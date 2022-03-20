@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Text, Image, TouchableOpacity } from 'react-native';
+import { Text, Image, TouchableOpacity, View } from 'react-native';
 import { images } from 'assets/images';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -32,23 +32,28 @@ function App({ dispatch, turn, isShowCountDown }) {
 
   return (
     <Layout turn={turn}>
-      {!isShowCountDown ? (
-        <Text style={appStyle.turn}>{`Turn: ${turn}`}</Text>
-      ) : (
+      <View style={appStyle.appBar}>
+        {!isShowCountDown ? (
+          <Text style={appStyle.turn}>{`Turn: ${turn}`}</Text>
+        ) : (
+          <TouchableOpacity
+            onPress={onSetCountDown}
+            onLongPress={onSetCountDown}
+            style={appStyle.turn}>
+            <Text style={appStyle.turn}>Back</Text>
+          </TouchableOpacity>
+        )}
         <TouchableOpacity
-          onPress={onSetCountDown}
-          onLongPress={onSetCountDown}
-          style={appStyle.turn}>
-          <Text style={appStyle.turn}>Back</Text>
+          onPress={onSetShopping}
+          onLongPress={onSetShopping}
+          style={appStyle.shoppingButton}>
+          <Text style={appStyle.turn}>Buy Turn</Text>
+          <Image source={images.home.shopping} style={appStyle.shoppingImage} />
         </TouchableOpacity>
-      )}
-      <TouchableOpacity
-        onPress={onSetShopping}
-        onLongPress={onSetShopping}
-        style={appStyle.shoppingButton}>
-        <Image source={images.home.shopping} style={appStyle.shoppingImage} />
-      </TouchableOpacity>
-      {isShowShopping ? <Buttons /> : <Countdown />}
+      </View>
+      <View style={appStyle.viewCenter}>
+        {isShowShopping ? <Buttons /> : <Countdown />}
+      </View>
     </Layout>
   );
 }

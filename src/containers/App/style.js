@@ -2,20 +2,23 @@ import { StyleSheet } from 'react-native';
 
 export const appStyle = StyleSheet.create({
   turn: {
-    color: 'white',
+    color: 'black',
     fontSize: 20,
     fontWeight: 'bold',
-    position: 'absolute',
-    top: '5%',
-    left: '5%',
-    textShadowColor: 'rgba(0, 0, 0, 0.4)',
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 10,
   },
+
+  appBar: {
+    flex: 0.1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+  },
+
   shoppingButton: {
-    position: 'absolute',
-    top: '4%',
-    right: '4%',
+    flex: 0.4,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 
   shoppingImage: {
@@ -24,51 +27,62 @@ export const appStyle = StyleSheet.create({
     height: 40,
   },
   textBack: {
-    fontSize: 24,
-    color: 'white',
-    position: 'absolute',
-    top: '3%',
-    left: '3%',
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 
   textClock: {
-    position: 'relative',
-    top: 20,
     fontSize: 120,
-    color: 'white',
-    fontWeight: '500',
+    color: 'black',
+    fontWeight: 'bold',
   },
 
   clockStyle: {
-    width: 300,
-    height: 300,
-    flex: 0.52,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
   },
 
-  textStartButton: {
-    fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold',
-    position: 'absolute',
-    top: '40%',
-    left: '35%',
+  checkboxView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  minuteView: {
+    width: '60%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
   startImage: {
-    width: 230,
-    height: 80,
+    width: 120,
+    height: 40,
+  },
+
+  teethImage: {
+    width: 220,
+    height: 220,
+    resizeMode: 'contain',
   },
 
   viewCenter: {
-    flex: 1,
+    flex: 0.9,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+
+  clockMockup: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   input: {
-    height: 60,
+    height: 50,
     width: '80%',
     borderWidth: 1,
     backgroundColor: 'white',
@@ -107,13 +121,9 @@ export const layoutStyle = StyleSheet.create({
     height: '40%',
   },
   children: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: 3,
-    elevation: 3,
+    flex: 1,
+    flexDirection: 'column',
+    alignContent: 'center',
   },
 });
 
